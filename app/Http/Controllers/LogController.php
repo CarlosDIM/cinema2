@@ -2,7 +2,6 @@
 
 namespace cinema\Http\Controllers;
 
-use cinema\User;
 use Illuminate\Http\Request;
 use Auth;
 Use Session;
@@ -10,6 +9,7 @@ Use Redirect;
 use cinema\Http\Requests;
 use cinema\Http\Requests\LoginRequest;
 use cinema\Http\Controllers\Controller;
+
 
 class LogController extends Controller
 {
@@ -39,15 +39,18 @@ class LogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(LoginRequest $request)
+    public function store(Request $request)
     {
-
-        if(Auth::attempt(['email'=>$request['email'],'password'=>$request['password'] ]))
+        if(Auth::attempt(array('email'=>$request['email'],'password'=>$request['password']),true))
         {
             return Redirect::to('admin');
+        }else
+        {
+            Session::flash('message-error','usuario incorrecto');
+            return Redirect::to('/');
         }
-        Session::flash('message-error','usuario incorrecto');
-        return Redirect::to('/');
+
+
     }
 
     /**
