@@ -2,6 +2,7 @@
 
 namespace cinema\Http\Controllers;
 
+use cinema\User;
 use Illuminate\Http\Request;
 use Auth;
 Use Session;
@@ -40,7 +41,8 @@ class LogController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        if(Auth::attempt(['email'=>$request['email'],'password'=>$request['password']]))
+
+        if(Auth::attempt(['email'=>$request['email'],'password'=>$request['password'] ]))
         {
             return Redirect::to('admin');
         }

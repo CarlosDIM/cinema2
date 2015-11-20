@@ -2,11 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="436fee4f-f760-4769-9386-f7e50816fc06" name="my_server" url="http://localhost:8000">
-        <fileTransfer mountedRoot="C:\xampp\htdocs\cinema" accessType="MOUNT" />
-      </webServer>
-      <webServer id="79dfaef1-2a60-453f-9980-ca83dac5a600" name="mi_servidor" url="http://localhost">
-        <fileTransfer mountedRoot="C:\xampp\htdocs" accessType="MOUNT" />
+      <webServer id="152e0811-1608-43e6-8e2b-b025295acac0" name="MY_SERVER" url="http://localhost:8000">
+        <fileTransfer mountedRoot="C:\wamp\www" accessType="MOUNT" />
       </webServer>
     </option>
   </component>
